@@ -1,0 +1,13 @@
+.dashboard{
+    float: left;
+    position:absolute;
+    height: 400px;
+
+
+}
+.banner{
+    float: right;
+    margin-left: 10px;
+    height:400px ;
+
+}

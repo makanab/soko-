@@ -1,0 +1,17 @@
+.carousel{
+    padding:10px;
+    margin-top: 10px;
+    position:absolute;
+    align-items: center;
+    margin-left: 18%;
+
+}
+
+img{
+    height: 300px;
+     width: auto;
+}
+
+ng-carousel{
+    width: 100%;
+}

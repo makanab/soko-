@@ -1,0 +1,15 @@
+shelve{
+    margin-top:30%;
+    position: absolute;
+    height: 200px;
+
+}
+
+mat-card{
+    height:300px;
+}
+
+shelve-container{
+    margin-left: 10px;
+    margin-right: 10px;
+}

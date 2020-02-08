@@ -1,0 +1,25 @@
+.toolbar{
+    position:fixed;
+    width: 100%;
+    height:auto;
+}
+.nav-footer{
+    margin:0px;
+}
+.dashboard{
+    margin-top: 2%;
+    margin-left:5%;
+    border-radius:4px;
+}
+.banner{
+    margin-top:0px;
+
+}
+.shelve{
+    padding: 0px;
+    margin-top:20px;
+     
+}
+.footer{
+
+}
