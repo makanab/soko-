@@ -8,6 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaterialModule} from './material/material.module';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
+
+
+
+
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { NavFooterComponent } from './components/nav-footer/nav-footer.component';
 import { BunnerComponent } from './components/bunner/bunner.component';
@@ -40,7 +46,8 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
     
   
   ],

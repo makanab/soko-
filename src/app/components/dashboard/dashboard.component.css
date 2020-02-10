@@ -11,3 +11,12 @@
     height:400px ;
 
 }
+.dash-btn{
+    background-color: #44bd32;
+    widows: 80px;
+    height: 48px;
+    display: block;
+    align-items: center;
+    color:white ;
+
+}

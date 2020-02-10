@@ -1,89 +1,31 @@
 
-<div class="shelve-container">
-<div class="row">
+<div class="row col-lg-12">
 
 
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
+    
+            <!--item templet-->
+
+            <div class="card  col-lg-3 mb-d text-center" *ngFor="let itemData of itemData">
+              <img [src]="itemData.itemPhoto" alt="" class ="card-img-top">
+                <div class="card-body">
+
+                    <p class="card-text"> {{itemData.description}} </p>
+                    <p class="card-text">Ksh 1200</p>
+
+
+                    <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                    <hr>
+                   <a class="btn btn-primary">buy now</a>
+                    
+                </div>
             
-                </mat-card-title>
-            </mat-card>
-
-
-            <!--additional Items -->
-
-
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
-            
-                </mat-card-title>
-            </mat-card>
-
-
-
-
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
-            
-                </mat-card-title>
-            </mat-card>
-
-
-
-
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
-            
-                </mat-card-title>
-            </mat-card>
-
-
-
-
-
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
-            
-                </mat-card-title>
-            </mat-card>
-
-
-
-
-
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
-            
-                </mat-card-title>
-            </mat-card>
-
-
-
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
-            
-                </mat-card-title>
-            </mat-card>
-
-            <mat-card  class="col-lg-3 mb-4 align-item-center">
-                <mat-card-title>
-                    my items 
-            
-                </mat-card-title>
-            </mat-card>
-
+            </div>
+            <!--item templet-->           
 
 
 
 </div>
-</div>
+
 
 
 
