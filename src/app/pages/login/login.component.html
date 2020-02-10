@@ -1,1 +1,85 @@
-<p>login works!</p>
+
+<div class="my-container  container-fluid ">
+    
+    <div class="row  col-lg-12">
+    <div class="card col-lg-8  align-items-center text-lg-center ">
+
+        
+            <h1 class="card-title">
+                Sign In</h1>
+            
+            
+            <div class="card-body">
+
+                <!--Login form -->
+
+
+                <form #loginForm="ngForm">
+                     
+                <!--Email-->
+
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="you@you.com" name="email" id="email"
+                    
+                    >
+                </div>
+                
+                <!--Email-->
+
+
+
+                
+                <!--Password-->
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="password">
+                </div>
+                
+                <!--Password-->
+
+
+
+
+
+                <!--login  button -->
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Login" >
+                </div>
+
+                 <!--login  button -->
+
+
+                
+              
+                
+
+
+
+
+                </form>
+
+                  <!--Login form -->
+                  
+
+
+            </div>
+
+
+
+
+
+
+        <div>
+            <p>Dont have an acount? <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Sign Up</a></p>
+        </div>
+        <hr>
+        <h2>login with ....</h2>
+        <div>
+            <a href="" class="fa fa-google"></a>
+            <a href="" class="fa fa-facebook"></a>
+        </div>
+
+
+    </div>
+    
+</div>
+</div>

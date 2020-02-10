@@ -1,1 +1,91 @@
-<p>register works!</p>
+
+<div class="my-container  container-fluid fade-in">
+    
+    <div class="row  col-lg-12">
+    <div class="card col-lg-8  align-items-center text-lg-center ">
+
+        
+            <h1 class="card-title">
+                Sign up</h1>
+            
+            
+            <div class="card-body">
+
+                <!--Login form -->
+
+
+                <form #registerForm="ngForm">
+
+
+                    <!--Email-->
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Full name " name="fullname " id="fullname"
+                    
+                    >
+                </div>
+                
+                <!--Email-->
+                     
+                <!--Email-->
+
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="you@you.com" name="email" id="email"
+                    
+                    >
+                </div>
+                
+                <!--Email-->
+
+
+
+                
+                <!--Password-->
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="password">
+                </div>
+                
+                <!--Password-->
+
+
+
+
+
+                <!--login  button -->
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Sign Up" >
+                </div>
+
+                 <!--login  button -->
+
+
+                
+              
+                
+
+
+
+
+                </form>
+
+                  <!--Login form -->
+                  
+
+
+            </div>
+
+
+
+
+
+
+        <div>
+            <p>Already have an acount? <a [routerLink]="['/Login']" routerLinkActive="router-link-active" >Sign In</a></p>
+        </div>
+        
+        
+
+    </div>
+    
+</div>
+</div>

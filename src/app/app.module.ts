@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaterialModule} from './material/material.module';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,9 +21,9 @@ import { BunnerComponent } from './components/bunner/bunner.component';
 import { ShelveComponent } from './components/shelve/shelve.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { HomeComponent } from './pages/home/home.component';
+import {RouteComponents}from './app-routing.module';
+import { SellComponent } from './pages/sell/sell.component';
+
 
 
 @NgModule({
@@ -37,9 +38,8 @@ import { HomeComponent } from './pages/home/home.component';
     ShelveComponent,
     FooterComponent,
     DashboardComponent,
-    LoginComponent,
-    RegisterComponent,
-    HomeComponent
+    RouteComponents,
+    SellComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +47,9 @@ import { HomeComponent } from './pages/home/home.component';
     BrowserAnimationsModule,
     MaterialModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
     
   
   ],
