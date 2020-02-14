@@ -20,3 +20,29 @@
     color:white ;
 
 }
+
+mat-icon{
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    width: 48px;
+    height: 48px;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+}
+
+a mat-icon{
+    color: #079992;
+}
+
+a span{
+    color: #000;
+}
+
+a:hover{
+    background-color: #dff9fb;
+    color: white;
+}

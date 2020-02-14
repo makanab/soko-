@@ -8,10 +8,20 @@
     <mat-card-content>
         <div dash-control>
 
-            <a>
-                <div class=" row card dash-btn">                   
-                        <mat-icon>add</mat-icon>
-                       <p> Sell product</p>
+            <a [routerLink]="['/sell']" routerLinkActive="router-link-active" >
+                <div class="row">                   
+                        <mat-icon>money</mat-icon>
+                        <span>sell product</span>
+                
+
+                </div>
+                
+            </a>
+
+            <a [routerLink]="['/home']" routerLinkActive="router-link-active" >
+                <div class="row">                   
+                        <mat-icon>local_shipping</mat-icon>
+                        <span>Local shipping</span>
                 
 
                 </div>

@@ -43,12 +43,32 @@
 
              
     <!--nav bar icons -->
-    <span>
-        <mat-icon class="nav-icon">shopping_cart</mat-icon>
-        <mat-icon class="nav-icon">person</mat-icon> 
-        <mat-icon class="nav-icon">live_help</mat-icon>
+    <span class="row">
+        <a [routerLink]="['/signin']" routerLinkActive="router-link-active" >   
+        <div class="outer-div">
+            <mat-icon>person</mat-icon>
+            <span>Account</span>
+        </div>
+    </a>
+
+    <a>   
+        <div class="outer-div">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>Cart</span>
+        </div>
+    </a>
+
+    <a>   
+        <div class="outer-div">
+            <mat-icon>live_help</mat-icon>
+            <span>Help</span>
+        </div>
+    </a>
+
          
        </span>
+
+    
     
        <!--nav bar icons -->
 
