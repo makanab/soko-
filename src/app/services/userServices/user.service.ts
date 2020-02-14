@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {User}from '../userServices/user.model';
+import {User}from '../userServices/user';
 import {HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 

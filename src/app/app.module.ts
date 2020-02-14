@@ -22,7 +22,6 @@ import { ShelveComponent } from './components/shelve/shelve.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {RouteComponents}from './app-routing.module';
-import { SellComponent } from './pages/sell/sell.component';
 
 
 
@@ -39,8 +38,7 @@ import { SellComponent } from './pages/sell/sell.component';
     FooterComponent,
     DashboardComponent,
     RouteComponents,
-    SellComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

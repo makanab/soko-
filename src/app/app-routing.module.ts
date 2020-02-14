@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SellComponent } from './pages/sell/sell.component';
 
 
 const routes: Routes = [ 
@@ -29,7 +30,12 @@ const routes: Routes = [
       component:LoginComponent
     
     
-      }
+      },
+      {
+        path:'sell', 
+        component:SellComponent
+      
+        }
 ];
 
 @NgModule({
@@ -38,4 +44,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const RouteComponents = [HomeComponent,LoginComponent,RegisterComponent];
+export const RouteComponents = [HomeComponent,LoginComponent,RegisterComponent , SellComponent];

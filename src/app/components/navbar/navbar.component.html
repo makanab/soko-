@@ -1,51 +1,59 @@
 
-<mat-toolbar class="nav lg-expand">
+<mat-toolbar class="nav lg-expand my-navbar">
     <span class="logo">Soko</span>
     <!--toggle button-->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+   
 
-    <!--search-->
-    <div class="search-form nav-item ">
-        <form action="">
-            <table>
-                <tr>
-                    <td class="">
-                        <!--implement aouto complete-->
-                        
-                                        
-                        <input type="text" placeholder="Search">
-                    </td>
-                    <!--search button -->
-                    <td>
-                     <button class="search-btn form-control" >
-                       Search
-                    </button>
-                        
-                    </td>
-                </tr>
+    <!--toggle button-->
+
+    <span class="col-lg-8 search-form">  
+    
+           
+            
+               <form action="">
+
+                <div class="row">
+                 <div class="col-lg-8 search-bar">
+                    <input type="text" class="form-control">
+                 </div>
+
+                <input type="submit" class="btn search-btn " value="search">
+
+                </div>      
+                     
+            
+                       
 
                 
-            </table>
+                
+                   
+                   
+                    
+
+            </form>
 
             
-        </form>
+               
+        
+    </span>
 
-
-    </div>
+   
 
      <!--search-->
 
-     <!--nav bar icons -->
-     <div class="nav-item">
-    <mat-icon class="nav-icon">shopping_cart</mat-icon>
-    <mat-icon class="nav-icon">person</mat-icon> 
-    <mat-icon class="nav-icon">live_help</mat-icon>
-     
-     </div>
-
+             
+    <!--nav bar icons -->
+    <span>
+        <mat-icon class="nav-icon">shopping_cart</mat-icon>
+        <mat-icon class="nav-icon">person</mat-icon> 
+        <mat-icon class="nav-icon">live_help</mat-icon>
+         
+       </span>
+    
        <!--nav bar icons -->
+
+    
+
 
 </mat-toolbar>
 

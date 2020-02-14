@@ -1,39 +1,48 @@
 
-.navbar{
+mat-toolbar{
     position:sticky;
-    padding-left: 20px;
-    padding-right: 20px;
+   padding: 0%;
+    background: #079992;
 }
-.search-form{
 
-    padding: 0%;
-    margin-left: 20%;
-    margin-right:10px;
-    padding-right: 5%;
-    width: 30%;
-    height: auto;
+.logo{
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    font-family:roboto ;
+    margin-left: 10px;
+    
+}
+
+.search-form{  
+   padding: 0;
+    margin-left: 8rem;
+    margin-right: 0;
 
 }
 .search-bar{
-    width: 30%;
-    height: auto;
-    padding-right: 0px;
-    padding-left: 0px;
+    border-radius:0;
 }
 
 .search-btn{
-    border-radius: 2px;
-    background:#d35400;
-    border: radius 5px;
-    color: whitesmoke;
-    font-family: cursive;
+    border-radius:0 ;
+    background:#dff9fb;
+    color: black;
+    font-family:verdana;
+    font-weight: bold;
+    margin-left:0.5px;
+
     
 
     
 }
 
 .nav-icon{
-    margin-left: 20px;
-    padding: 20px;
+    margin-left: 36px;
+    padding: 5px;
+    color: white;
+}
+span{
+    padding: 0%;
 }
 
