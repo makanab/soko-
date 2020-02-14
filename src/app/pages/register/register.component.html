@@ -14,15 +14,21 @@
                 <!--Login form -->
 
 
-                <form #registerForm="ngForm">
+                <form #registerForm="ngForm" (ngSubmit)="registerForm.valid && onSubmit(registerForm)">
 
 
                     <!--Email-->
 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Full name " name="fullname " id="fullname"
+                    <input type="text" class="form-control" placeholder="Full name " name="fullname " 
+                    id="fullname" #fullname="ngModel" [(ngModel)]="userService.userData.fullname" required
+                    [ngClass]="{'invalid-textBox':registerForm.submitted && !fullname.valid}"
                     
                     >
+                    <div *ngIf="registerForm.submitted && !fullname.valid">
+                        <label for="" class="alert" >!full name can not be empty</label>
+                    </div>
+
                 </div>
                 
                 <!--Email-->
@@ -31,8 +37,18 @@
 
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="you@you.com" name="email" id="email"
+                    required #email="ngModel" [(ngModel)]="userService.userData.email" [pattern]="emailRegex" required 
+                    [ngClass]="{'invalid-textBox':registerForm.submmited && !email.valid}"
                     
                     >
+
+                    <div *ngIf="registerForm.submitted && email.errors">
+                        <label for=""*ngIf="email.errors.required">!email can not be empty </label>
+                        <label for=""*ngIf="email.errors.pattern">!invlid email</label>
+                    </div>
+
+
+
                 </div>
                 
                 <!--Email-->
@@ -42,7 +58,16 @@
                 
                 <!--Password-->
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="password">
+                    <input type="password" class="form-control" placeholder="password" id="passsword" name="password" 
+                    required minlength="6" #password="ngModel" [(ngModel)]="userService.userData.password" 
+                    [ngClass]="{'invalid-textBox': registerForm.submitted && !password.valid}"
+                    >
+
+                    <div *ngIf="registerForm.submitted && password.errors">
+                     <label for="" *ngIf="password.errors.required">!password required</label>
+                     
+                     <label for="" *ngIf="password.errors.required">! at least 6 characters</label>
+                    </div>
                 </div>
                 
                 <!--Password-->
@@ -69,6 +94,15 @@
                 </form>
 
                   <!--Login form -->
+
+
+                  <!--success and error message -->
+                  <div *ngIf="showMessage">
+                      <label for="">Signed up successfuly </label>
+
+                  </div>
+
+                  <!--success and error message -->
                   
 
 

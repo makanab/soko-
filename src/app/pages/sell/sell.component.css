@@ -2,6 +2,22 @@
 .my-container{
 
     position: absolute;
-    
+
+
+}
+my-btn{
+    margin-top: 10px;
+    margin-left: 12rem;
+    position: absolute;
+    padding: 20px;    
+    background-color:#079992 ;
+    color: #ffc312;
+
+}
+
+
+my-header{
+    background-color:#079992 ;
+    color: #ffc312;
 
 }

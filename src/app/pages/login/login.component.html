@@ -14,14 +14,24 @@
                 <!--Login form -->
 
 
-                <form #loginForm="ngForm">
+                <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && onSubmit(loginForm)">
                      
                 <!--Email-->
 
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="you@you.com" name="email" id="email"
+                   #email="ngModel" [(ngModel)]="usermodel.email"  required [pattern]="userService.emailRegex" 
+                    [ngClass]="{'invalid-textBox': loginForm.submitted && !email.valid}"
                     
                     >
+
+                    <div *ngIf="loginForm.submitted && email.errors">
+
+                        <label for="" *ngIf="email.errors.required">!email  required </label>
+                        
+                        <label for="" *ngIf="email.errors.pattern">!invalid email </label>
+
+                    </div>
                 </div>
                 
                 <!--Email-->
@@ -29,20 +39,29 @@
 
 
                 
+                
                 <!--Password-->
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="password">
+                    <input type="password" class="form-control" placeholder="password" id="passsword" name="password" 
+                    required minlength="6" #password="ngModel" [(ngModel)]="usermodel.password" 
+                    [ngClass]="{'invalid-textBox': loginForm.submitted && !password.valid}"
+                    >
+
+                    <div *ngIf="loginForm.submitted && password.errors">
+                     <label for="" *ngIf="password.errors.required">!password required</label>
+                     
+                     <label for="" *ngIf="password.errors.required">! at least 6 characters</label>
+                    </div>
                 </div>
                 
                 <!--Password-->
-
 
 
 
 
                 <!--login  button -->
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Login" >
+                    <input type="submit" class="my-btn" value="Login" >
                 </div>
 
                  <!--login  button -->
@@ -58,6 +77,15 @@
                 </form>
 
                   <!--Login form -->
+
+
+
+                  <!--error message -->
+
+                  <div *ngIf="errMessage">
+                    <label for="">{{errMessage}}</label>
+                </div>
+                <!--error message -->
                   
 
 
@@ -80,6 +108,7 @@
 
 
     </div>
+  
     
 </div>
 </div>
