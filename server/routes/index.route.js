@@ -61,6 +61,7 @@ const upload = multer({storage});
 // handers 
 const  UserHandler =  require('../controllers/user.controller');
 const itemHandler = require('../controllers/item.controller');
+const fileupload = require('../config/storageEngineConfig');
 
 
 
@@ -78,6 +79,22 @@ router.get('/myip',UserHandler.myIp);
 
 router.post('/additem',upload.single('image'), itemHandler.uploadPhoto);
 router.get('/items',itemHandler.listItems);
+
+
+// file upload test route
+
+router.post('/upload' ,fileupload.fupload.single('file'),(req,res,next)=>{
+    res.json({file:req.file})
+});
+
+router.get('/files' , fileupload.getFiles);
+router.get('/file/:filename',fileupload.getByname);
+
+
+//display image
+
+router.get('/image/:filename')
+
 
 
 

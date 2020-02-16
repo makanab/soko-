@@ -8,11 +8,13 @@ const options  =  {
 
 
 // connect to mongodb
-mongoose.connect(process.env.MONGODB_URI,options,(err)=>{
+ mongoose.connect(process.env.MONGODB_URI,options,(err)=>{
     if(!err){
         console.log('monodb connected')
     }
 });
+
+
 
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {User}from '../userServices/user';
+import {User, Product}from '../userServices/user';
 import {HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -13,7 +13,16 @@ export class UserService {
     fullname:'',
     email:'',
     password:''
+  };
+
+  productData:Product = {
+    description:'',
+    category:'',
+    itemPhoto:null
   }
+
+
+
 
   
   emailRegex = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
@@ -35,6 +44,10 @@ loginUser(authCredentials){
 }
 getUserPtofile(){
   return this.http.get(environment.apiBaseurl+'/profile');
+}
+
+sellProduct(product:Product){
+  return this.http.post(environment.apiBaseurl+'/additem',product);
 }
 
 

@@ -1,7 +1,7 @@
 
 
 <div class="container-fluid ">
-    <form action="">
+    <form #sellproductForm="ngForm" (ngSubmit)="sellproductForm.valid && onSubmit(sellproductForm)" enctype="multipart/form-data" >
 
 <div class="row align-items-center mb-4">
 
@@ -56,13 +56,21 @@
                      
                 <!--subcategory-->
                 <div class="form-group">
-                    <select name="" id="category" class="form-control custom-select-lg custom-select" >
+                    <select name="" id="category" name="category" class="form-control custom-select-lg custom-select"
+                    #category="ngModel" [(ngModel)]="userServices.productData.category"  required 
+                    [ngClass]="{'invalid-textBox': sellproductForm.submitted && !category.valid}"
+
+                    >
                         <option value="">choose subcategory</option>
-                        <option value="">Machinery</option>
+                        <option value="Machinery ">Machinery</option>
                         <option value="">Roofing Material</option>
-                        <option value="">paint</option>
-                        <option value="">floor</option>
+                        <option value="paint">paint</option>
+                        <option value="floor">floor</option>
                     </select>
+                    <div *ngIf="sellproductForm.submitted && !category.valid">
+                        <label for="">!please select category</label>
+                    </div>
+                    
                 </div>
  
                     <!--sub category-->
@@ -83,22 +91,38 @@
 
               <!--Description-->
 
-              <div class="col-lg-4">
+              <div class="col-lg-4 mb-4">
                 <div class="form-group">
 
-                    <textarea name="" id="" cols="12" rows="5"class="form-control z-depth-1" placeholder="product discription....">  
+                    <textarea name="description" id="description" cols="12" rows="5"class="form-control z-depth-1" placeholder="product discription...."
+                    #description="ngModel" 
+                    [(ngModel)]="userServices.productData.description"  required minlength="100"
+                    [ngClass]="{'invalid-textBox':sellproductForm.submitted && !description.valid}"
+                    
+                
+                    >                  
                         
                     </textarea>
+                    <div *ngIf="sellproductForm.submitted && description.errors">
+                        <label for="" *ngIf="description.errors.required">!descriprion required </label>
+                        <label for="" *ngIf="description.errors.minlenght">!at least 100 characters </label>
+                    </div>
 
                 </div>
             </div>
 
             <div class="col-lg-4">
                 <div class="form-group">
-                    <div class="row">
+                    <div class="row">                  
+                    <input type="file" class="btn btn primary" value="add Photo" name="itemphoto" 
+                    id="itemphot" #itemphoto="ngModel" [(ngModel)]="userServices.productData.itemphoto" required
+                    [ngClass]="{'invalid-textBox':sellproductForm.submitted && !itemphoto.valid}"
 
-                    <mat-icon>add_a_photo</mat-icon>                  
-                    <input type="file"  >
+                    >
+
+                    <div *ngIf="sellproductForm.submitted && !itemphoto.valid">
+                        <label for="">!product photo required </label>
+                    </div>
                 </div>
                    
                 </div>

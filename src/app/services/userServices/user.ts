@@ -5,3 +5,10 @@ export class User {
     password:string;
     
 }
+
+export class Product{
+    description:string;
+    category:string;
+    itemPhoto:File
+
+}
