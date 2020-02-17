@@ -57,7 +57,7 @@
                 <!--subcategory-->
                 <div class="form-group">
                     <select name="" id="category" name="category" class="form-control custom-select-lg custom-select"
-                    #category="ngModel" [(ngModel)]="userServices.productData.category"  required 
+                    #category="ngModel" [(ngModel)]="productData.category"  required 
                     [ngClass]="{'invalid-textBox': sellproductForm.submitted && !category.valid}"
 
                     >
@@ -96,7 +96,7 @@
 
                     <textarea name="description" id="description" cols="12" rows="5"class="form-control z-depth-1" placeholder="product discription...."
                     #description="ngModel" 
-                    [(ngModel)]="userServices.productData.description"  required minlength="100"
+                    [(ngModel)]="productData.description"  required minlength="100"
                     [ngClass]="{'invalid-textBox':sellproductForm.submitted && !description.valid}"
                     
                 
@@ -114,15 +114,12 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <div class="row">                  
-                    <input type="file" class="btn btn primary" value="add Photo" name="itemphoto" 
-                    id="itemphot" #itemphoto="ngModel" [(ngModel)]="userServices.productData.itemphoto" required
-                    [ngClass]="{'invalid-textBox':sellproductForm.submitted && !itemphoto.valid}"
+                    <input type="file" (change)="onFileSelected($event)"  class="btn btn primary" id="itemphoto"
+                    name="itemphoto"
 
                     >
 
-                    <div *ngIf="sellproductForm.submitted && !itemphoto.valid">
-                        <label for="">!product photo required </label>
-                    </div>
+                  
                 </div>
                    
                 </div>

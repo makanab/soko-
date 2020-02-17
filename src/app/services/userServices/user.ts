@@ -8,7 +8,5 @@ export class User {
 
 export class Product{
     description:string;
-    category:string;
-    itemPhoto:File
-
+    category:string 
 }

@@ -15,14 +15,6 @@ export class UserService {
     password:''
   };
 
-  productData:Product = {
-    description:'',
-    category:'',
-    itemPhoto:null
-  }
-
-
-
 
   
   emailRegex = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
@@ -47,7 +39,7 @@ getUserPtofile(){
 }
 
 sellProduct(product:Product){
-  return this.http.post(environment.apiBaseurl+'/additem',product);
+  return this.http.post(environment.apiBaseurl+'/upload',product);
 }
 
 
