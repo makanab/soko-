@@ -21,7 +21,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(cros());
 app.use(methodOverride('_method'));
 app.use(passport.initialize());
-app.use('/uploads',express.static('uploads'));
+//app.use('/uploads',express.static('uploads'));
 app.use('/api',rtsIndex);
 
 

@@ -1,34 +1,28 @@
 
 require('../models/item.model');
 const mongoose = require('mongoose');
-const fs = require('fs');
-const Item = mongoose.model('Item');
-const path = require('path')
+const Product  = mongoose.model('Item');
+const fs  = require('fs');
 
 
-// add item 
+// add product 
+module.exports.addProduct= (req,res,next)=>{
+    //  res.json({file:req.file})
+    let newProduct = new Product();
+    newProduct.description = req.body.decription;
+    newProduct.category  = req.body.category;
+    newProduct.itemPhoto = req.file.filename
+    newProduct.save((err,result)=>{
+        if(err){
+            res.status(501).send({err:"could not save an error occurd "});
+        } else{
+            res.status(200).send(result);
 
+        }
 
+    })
 
-
-module.exports.uploadPhoto = (req,res,next)=>{
-
-   let newItem  = new Item();
-   newItem.description =req.body.description;
-   newItem.category =req.body.category;
-   newItem.itemPhoto = req.file.path
-   
-   newItem.save((err,item)=>{
-       if(!err){
-           res.status(200).send(item);
-
-       }
-
-   });
-
-  
-   }
-
+}
 
 
 
@@ -36,9 +30,9 @@ module.exports.uploadPhoto = (req,res,next)=>{
 
 
 module.exports.listItems= (req,res,next)=>{
-    Item.find({},(err,items)=>{
+    Product.find({},(err,product)=>{
       if(!err){
-        res.status(200).json(items)
+        res.status(200).json(product)
       }
 
     });
@@ -50,7 +44,7 @@ module.exports.listItems= (req,res,next)=>{
 
 //find  one 
 module.exports.searchItem = (req,res,next)=>{
-    Item.findOne({},(err,item ));
+    Product.findOne({},(err,item ));
 }
 
 
@@ -95,3 +89,6 @@ module.exports.addItem = (req,res,next )=>{
 }
 
 */
+
+
+

@@ -22,7 +22,7 @@ const options = {
 
  });
 
- // storage ingine 
+ // storage engine 
  const storage = new GridFsStorage(
      {
          url:process.env.MONGODB_URI,
@@ -109,5 +109,40 @@ const options = {
 
 
         // display image 
+
+
+        module.exports.displayAll= (req,res,next)=>{
+            gfs.files.findOne({},(err,file)=>{
+   
+   
+               if(!file || file.length ===0){
+                   res.status(404).json({
+                       err:"file not found"
+                   });
+               } else{
+   
+                   // check image 
+                   if(file.contentType ==='image/jpeg' || file.contentType ==='img/png'){
+                    const readstream = gfs.createReadStream(file.filename);
+                    readstream.pipe(res)
+   
+                   }else{
+                       return res.status(404).json({err:'not image'});
+   
+                   }
+   
+   
+   
+                  
+               }
+   
+   
+   
+            });
+           
+           
+           
+           }
+   
 
      

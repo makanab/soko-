@@ -1,60 +1,5 @@
 const  express = require('express');
 const  router = express.Router();
-const  multer = require('multer');
-const path = require('path');
-
-const storage =  multer.diskStorage(
-    {
-        destination:function(req,file,cb){
-            cb(null,'./uploads/');
-
-        },
-        filename:function(req,file,cb){
-            cb(null ,file.originalname);
-
-            
-        }
-    }
-);
-
-
-// Filefilter
-const filter = function(req,file,cb){
-    if(file.mimetype ==='image/jpeg' || file.mimetype ==='image/jpg' ||file.mimetype ==='image/png'){
-        cb(null,true);
-    } else{
-        cb(null,false);
-    }
-
-}
-
-const upload = multer({
-    storage:storage , 
-    limits:{
-        fileSize:1024*1024*10
-        
-    },
-    fileFilter:filter 
-    
-    });
-
-
-/*
-const upload =multer({dest: 'uploads/', 
-rename:function(fieldname,filename){
-    return filename;
-}
-}); */
-
-
-/*
-const storageConfig = require('../config/storageEngineConfig');
-const storage = storageConfig.storageEngine;
-const upload = multer({storage});
-                                                        
-
-*/
-
 
 
 
@@ -77,18 +22,12 @@ router.get('/myip',UserHandler.myIp);
 
 // item schema routes 
 
-router.post('/additem',upload.single('image'), itemHandler.uploadPhoto);
-router.get('/items',itemHandler.listItems);
 
-
-// file upload test route
-
-router.post('/upload' ,fileupload.fupload.single('file'),(req,res,next)=>{
-    res.json({file:req.file})
-});
+router.post('/upload' ,fileupload.fupload.single('file'),itemHandler.addProduct);
 
 router.get('/files' , fileupload.getFiles);
 router.get('/file/:filename',fileupload.getByname);
+router.get('/images', fileupload.displayAll);
 
 
 //display image

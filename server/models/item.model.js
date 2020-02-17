@@ -18,7 +18,7 @@ const itemsSchema = new Schema ({
 
     },
     itemPhoto:{
-       type:String
+              type:String
     
 
 

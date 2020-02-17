@@ -29,7 +29,8 @@ export class ShelveComponent implements OnInit {
   getitemData(){
     return this.http.get<any>(environment.apiBaseurl+'/items').subscribe(
       res=>{
-        this.itemData = res;
+        const b64Res = btoa(res);
+        this.itemData = 'data:image/jpeg;base64' + b64Res;
         console.log(res);
       },
       err=>console.log(err)
