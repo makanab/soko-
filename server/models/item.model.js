@@ -22,7 +22,8 @@ const itemsSchema = new Schema ({
     
 
 
-    }
+    },
+    itemUrl:String
 
     
 

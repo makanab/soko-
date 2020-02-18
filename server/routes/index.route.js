@@ -24,6 +24,7 @@ router.get('/myip',UserHandler.myIp);
 
 
 router.post('/upload' ,fileupload.fupload.single('file'),itemHandler.addProduct);
+router.get('/product',itemHandler.listProducts);
 
 router.get('/files' , fileupload.getFiles);
 router.get('/file/:filename',fileupload.getByname);

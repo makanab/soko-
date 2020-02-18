@@ -11,7 +11,9 @@ module.exports.addProduct= (req,res,next)=>{
     let newProduct = new Product();
     newProduct.description = req.body.decription;
     newProduct.category  = req.body.category;
+    console.log(req.file);
     newProduct.itemPhoto = req.file.filename
+    newProduct.itemUrl ="http://localhost:3000/api/file/"+req.file.filename;
     newProduct.save((err,result)=>{
         if(err){
             res.status(501).send({err:"could not save an error occurd "});
@@ -26,10 +28,10 @@ module.exports.addProduct= (req,res,next)=>{
 
 
 
-//list  items
+//lis products 
 
 
-module.exports.listItems= (req,res,next)=>{
+module.exports.listProducts= (req,res,next)=>{
     Product.find({},(err,product)=>{
       if(!err){
         res.status(200).json(product)

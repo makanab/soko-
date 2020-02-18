@@ -8,33 +8,64 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./shelve.component.css']
 })
 export class ShelveComponent implements OnInit {
-
-  items = ["1","2","3","4","5","6","7","8","9","10","12"]
-
+  
+  
   currentRate =8
 
-  itemData:any =[]
+  itemData:any =[];
+  /*
+   productImage;
+   productRef:any=[];
+   productRefname:string;
+
+   */
+
+
+   /*
+   @Desc use map function fr http get in furure updates insted of static url
+   */
+
 
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
     this.getitemData();
-    console.log(this.getitemData())
-
-
 
   }
 
 
-  getitemData(){
-    return this.http.get<any>(environment.apiBaseurl+'/items').subscribe(
+  /*
+  // product image refrence
+
+  getproductimage(){
+    return this.http.get<any>(environment.apiBaseurl+'/files').subscribe(
       res=>{
-        const b64Res = btoa(res);
-        this.itemData = 'data:image/jpeg;base64' + b64Res;
-        console.log(res);
+
+        this.productRef =res;
+        this.productRefname = this.productRef.filaname;
+        console.log(this.productRefname)
+
+
       },
       err=>console.log(err)
-    );
+    )
+  }
+  */
+
+
+// product data 
+  getitemData(){
+    return this.http.get<any>(environment.apiBaseurl+'/product').subscribe(
+      res=>{
+        this.itemData = res;
+        console.log(this.itemData);
+
+        }            
+        
+        
+      ,
+      err=>console.log(err)
+    )
     
   }
 
