@@ -1,11 +1,11 @@
 
-<div class="row col-lg-12">
+<div class="row col-sm-12">
 
 
     
             <!--item templet-->
 
-            <div class="card  col-lg-3 mb-d text-center" *ngFor="let itemData of itemData" >
+            <div class="card  col col-sm-3 mb-1 text-center" *ngFor="let itemData of itemData" >
               <img [src]="itemData.itemUrl" alt="" class ="card-img-top">
                 <div class="card-body">
 
@@ -15,7 +15,7 @@
 
                     <ngb-rating [(rate)]="currentRate"></ngb-rating>
                     <hr>
-                   <a class="btn btn-primary">buy now</a>
+                   <a class="btn my-btn">buy now</a>
                     
                 </div>
             

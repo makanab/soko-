@@ -6,31 +6,24 @@
 
     <!--toggle button-->
 
-    <span class="col-lg-8 search-form">  
-    
+    <span class="col-lg-8 search-form">    
            
-            
-               <form action="">
+
 
                 <div class="row">
                  <div class="col-lg-8 search-bar">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="search" #search>
                  </div>
 
-                <input type="submit" class="btn search-btn " value="search">
+                <input type="submit" class="btn search-btn " value="search"  (click)="onSearch(search.value)">
 
-                </div>      
-                     
+                </div>                  
             
                        
 
                 
                 
-                   
-                   
-                    
-
-            </form>
+            
 
             
                

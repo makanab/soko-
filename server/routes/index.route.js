@@ -33,7 +33,27 @@ router.get('/images', fileupload.displayAll);
 
 //display image
 
-router.get('/image/:filename')
+router.get('/image/:filename');
+
+// search route  
+//router.get('/Tsearch',itemHandler.testSearch);
+//router.post('/search',itemHandler.postSearch);
+router.post('/search',itemHandler.postSearch);
+router.get('/search',itemHandler.getSearch);
+
+
+
+
+/*
+const search = require('../config/searchEngineConfig');
+router.post('/search',(req,res)=>{
+    search.doSearch(req,res);
+})
+
+router.get('/search',(req,res)=>{
+    search.doSearch(req,res);
+})
+*/
 
 
 

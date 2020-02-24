@@ -1,5 +1,7 @@
 const  mongoose  = require('mongoose');
+const mongoosastic = require('mongoosastic');
 const  Schema = mongoose.Schema ;
+
 
 // items schema 
 
@@ -28,6 +30,15 @@ const itemsSchema = new Schema ({
     
 
 });
+
+
+
+itemsSchema.plugin(mongoosastic,{
+    "host":"localhost",
+    "port":"9200"
+});
+
+
 
 
 // name model

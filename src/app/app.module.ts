@@ -22,6 +22,7 @@ import { ShelveComponent } from './components/shelve/shelve.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {RouteComponents}from './app-routing.module';
+import { SearchresultsComponent } from './pages/searchresults/searchresults.component';
 
 
 
@@ -38,6 +39,7 @@ import {RouteComponents}from './app-routing.module';
     FooterComponent,
     DashboardComponent,
     RouteComponents,
+    SearchresultsComponent,
     ],
   imports: [
     BrowserModule,

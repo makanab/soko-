@@ -13,3 +13,17 @@ shelve-container{
     margin-left: 10px;
     margin-right: 10px;
 }
+
+
+my-item{
+    height: 300px;
+    width:18rem;
+
+}
+
+.my-btn{
+    background-color: #079992;
+    color: #fff;
+    background: #079992;
+}
+

@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SellComponent } from './pages/sell/sell.component';
+import { SearchresultsComponent } from './pages/searchresults/searchresults.component';
 
 
 const routes: Routes = [ 
@@ -35,6 +36,10 @@ const routes: Routes = [
         path:'sell', 
         component:SellComponent
       
+        },
+        {
+          path:'search',
+          component:SearchresultsComponent
         }
 ];
 

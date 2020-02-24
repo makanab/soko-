@@ -5,6 +5,9 @@ const Product  = mongoose.model('Item');
 const fs  = require('fs');
 
 
+
+
+
 // add product 
 module.exports.addProduct= (req,res,next)=>{
     //  res.json({file:req.file})
@@ -91,6 +94,87 @@ module.exports.addItem = (req,res,next )=>{
 }
 
 */
+
+
+/*
+
+
+   // search test 
+
+   module.exports.testSearch=(req,res,next)=>{
+
+    Product.search({
+        query_string:{query:"mach"}
+   
+    },(err,results)=>{
+        if(err) res.send(err);
+        res.send(results);
+    })
+       
+}*/
+
+
+
+
+
+
+// elasticsearch config 
+//@DESC  indexing and mapping 
+  
+
+Product.createMapping((err ,mapping)=>{
+    console.log('mapping created');
+
+});
+
+ let  stream = Product.synchronize();
+  let  count = 0;
+
+ stream.on('data',function(){
+     count ++;
+
+ });
+
+ stream.on('error',function(err){
+     console.log(err);
+
+
+});
+
+stream.on('close',function(){
+    console.log("Indexed"+count+"documents");
+
+});
+
+// product search 
+
+module.exports.postSearch =(req,res,next)=>{
+ const q = req.body.q
+ console.log(q);
+    res.redirect('http://localhost:3000/api/search?q='+req.body.q);
+
+}
+
+module.exports.getSearch =(req,res,next)=>{
+    if(req.query.q){
+        Product.search({
+            query_string:{query:req.query.q}
+        }, (err,results)=>{
+            results:
+            if(err) return next(err);
+            const data = results.hits.hits.map((hit)=>{
+
+                return hit;
+
+            });
+            res.send({
+                query:req.query.q,
+                data:data
+            })
+        });
+    }
+    
+}
 
 
 
