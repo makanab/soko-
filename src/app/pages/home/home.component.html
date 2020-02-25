@@ -1,10 +1,19 @@
 
 <div class="">
-    <app-navbar></app-navbar>
-    <app-nav-footer></app-nav-footer>
+ <app-navbar (queryEvent)="recieveQuery($event)"  ></app-navbar>
+    <app-nav-footer  *ngIf="showSiblings" ></app-nav-footer>
 </div>
 
-<div class="dashboard">
+<div *ngIf="showSearchResults"> 
+    <app-searchresults></app-searchresults>
+</div>
+
+
+<div *ngIf="showSiblings" >
+    
+
+
+<div class="dashboard" >
     <app-dashboard></app-dashboard>
 
 </div>
@@ -16,6 +25,7 @@
 <div class="shelve">
 <app-shelve></app-shelve>
 
+</div>
 </div>
 
 <div class=" footer">

@@ -1,37 +1,61 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Output ,EventEmitter} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent  {
 
-  query:string;
+  query:string = 'hello world'
+  showSearchResults= false;
+  showSiblings= true;
+  reset:boolean;
 
-  constructor(private http :HttpClient, private router:Router) { }
+  
 
-  ngOnInit() {
-  }
+  @Output() queryEvent = new EventEmitter<string>();
 
+  @Output() resetEvent = new EventEmitter<any>();
+
+  constructor(private http :HttpClient, private router:Router,private _location :Location) { }
+  
 
   onSearch(value){
     this.query = value;
-    //console.log(this.query);
+
     if(this.query ==''){
-       this.router.navigateByUrl('/home');
-      
+             
 
     }else{
-      this.router.navigateByUrl('/search');
+      this.queryEvent.emit(this.query);
+      
 
     }
-
-    return this.query;
     
 
   }
 
+
+
+
+goHome():void{
+  this.router.navigateByUrl('/home',{skipLocationChange:false}).then( ()=> {
+    this.router.navigate([decodeURI(this._location.path())])
+  });
+
 }
+
+
+
+
+  
+
+}
+
+
+
+

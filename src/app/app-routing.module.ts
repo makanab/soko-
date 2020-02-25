@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
   path:'home', 
-  component:HomeComponent
+  component:HomeComponent,
 
 
   },
@@ -49,4 +49,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const RouteComponents = [HomeComponent,LoginComponent,RegisterComponent , SellComponent];
+export const RouteComponents = [HomeComponent,LoginComponent,RegisterComponent , SellComponent,SearchresultsComponent,];

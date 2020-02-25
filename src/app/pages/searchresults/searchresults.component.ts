@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchresults',
@@ -7,9 +8,11 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
   styleUrls: ['./searchresults.component.css']
 })
 export class SearchresultsComponent implements OnInit {
+
+  query:string;
   
 
-  constructor( private _q :NavbarComponent) { }
+  constructor(private router :Router) { }
 
   ngOnInit() {
 
@@ -17,9 +20,18 @@ export class SearchresultsComponent implements OnInit {
   }
 
 
-  getSearchResult(){
-    console.log(this._q.query)
-    
-  }
+/* 
+  recieveQuery($event){
+    this.query = $event
+    console.log(this.query);
+    if( this.query=='' ){
+      this.router.navigateByUrl('/home');    
+
+
+    }
+
+  } */
+
+
 
 }

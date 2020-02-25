@@ -10,6 +10,9 @@ import { MaterialModule} from './material/material.module';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {CommonModule} from  '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -22,7 +25,7 @@ import { ShelveComponent } from './components/shelve/shelve.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {RouteComponents}from './app-routing.module';
-import { SearchresultsComponent } from './pages/searchresults/searchresults.component';
+
 
 
 
@@ -39,7 +42,10 @@ import { SearchresultsComponent } from './pages/searchresults/searchresults.comp
     FooterComponent,
     DashboardComponent,
     RouteComponents,
-    SearchresultsComponent,
+    CommonModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
+    
     ],
   imports: [
     BrowserModule,
