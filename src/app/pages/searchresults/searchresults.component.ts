@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { Router } from '@angular/router';
+import {SearchService} from '../../services/search.service';
+
 
 @Component({
   selector: 'app-searchresults',
@@ -10,14 +12,23 @@ import { Router } from '@angular/router';
 export class SearchresultsComponent implements OnInit {
 
   query:string;
+
   
 
-  constructor(private router :Router) { }
+  constructor(private router :Router,  private searchService:SearchService) { }
 
   ngOnInit() {
 
 
   }
+  
+
+ 
+
+
+
+
+
 
 
 /* 

@@ -1,14 +1,16 @@
-import { Component,Output ,EventEmitter} from '@angular/core';
+import { Component,Output ,EventEmitter, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
+import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent  {
+export class NavbarComponent  implements OnInit {
 
   query:string = 'hello world'
   showSearchResults= false;
@@ -21,14 +23,27 @@ export class NavbarComponent  {
 
   @Output() resetEvent = new EventEmitter<any>();
 
-  constructor(private http :HttpClient, private router:Router,private _location :Location) { }
+ 
+  constructor(
+    private http :HttpClient,
+     private router:Router,
+     private _location :Location,
+     private searchService :SearchService
+     
+     ) { }
+
+     ngOnInit(){
+       this.searchService.search()
+    
+    }
+    
+    
+    
   
 
   onSearch(value){
     this.query = value;
-
-    if(this.query ==''){
-             
+    if(this.query ==''){            
 
     }else{
       this.queryEvent.emit(this.query);
@@ -49,6 +64,10 @@ goHome():void{
 
 }
 
+
+
+
+ 
 
 
 

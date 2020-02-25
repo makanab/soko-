@@ -40,12 +40,9 @@ import {RouteComponents}from './app-routing.module';
     BunnerComponent,
     ShelveComponent,
     FooterComponent,
-    DashboardComponent,
-    RouteComponents,
-    CommonModule,
-    ReactiveFormsModule,
-    NgxPaginationModule
-    
+    DashboardComponent,    
+    RouteComponents
+   
     ],
   imports: [
     BrowserModule,
@@ -54,7 +51,11 @@ import {RouteComponents}from './app-routing.module';
     MaterialModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
+    
 
     
   

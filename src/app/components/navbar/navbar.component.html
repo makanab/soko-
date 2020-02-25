@@ -8,14 +8,21 @@
 
     <!--toggle button-->
 
-    <span class="col-lg-8 search-form">    
+    <span class="col-lg-8 search-form">   
            
 
 
                 <div class="row">
-                 <div class="col-lg-8 search-bar">
-                    <input type="text" class="form-control" name="search" #search>
+                 <section>
+                <form [formGroup]=" searchService.searchForm" >
+                     <div >
+                    <input type="text"  class=" col col-lg-8  form-group search-bar"  (keyup)="searchService.searchTerms.next($event)" 
+                    formControlName ="search"   #search  placeholder="Search  ...">
                  </div>
+
+                </form>
+            </section>
+
 
                 <input type="submit" class="btn search-btn " value="search"  (click)="onSearch(search.value)">
 
