@@ -16,7 +16,7 @@ mat-toolbar{
 
 .search-form{  
    padding: 0;
-    margin-left: 8rem;
+    margin-left: 6rem;
     margin-right: 0;
 
 }
@@ -39,7 +39,7 @@ mat-toolbar{
 }
 
 .nav-icon{
-    margin-left: 36px;
+    margin-left: 3rem ;
     padding: 5px;
     color: white;
     float: right;
@@ -70,5 +70,9 @@ color: white;
 .outer-div span{
     font-size: 14px;
     font-weight: bold;
+}
+
+.form-rounded{
+    border-radius: 1rem ;
 }
 

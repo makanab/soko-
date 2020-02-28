@@ -41,18 +41,6 @@ export class NavbarComponent  implements OnInit {
     
   
 
-  onSearch(value){
-    this.query = value;
-    if(this.query ==''){            
-
-    }else{
-      this.queryEvent.emit(this.query);
-      
-
-    }
-    
-
-  }
 
 
 
@@ -62,6 +50,10 @@ goHome():void{
     this.router.navigate([decodeURI(this._location.path())])
   });
 
+}
+
+onSearch(){
+  this.router.navigateByUrl('/search');
 }
 
 

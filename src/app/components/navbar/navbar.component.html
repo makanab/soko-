@@ -1,32 +1,30 @@
 
 <mat-toolbar class="nav lg-expand my-navbar">
+    
     <span class="logo" >
-    <a   href="#" >Soko</a>
+    <a  [routerLink]="['/home' ]" routerLinkActive="router-link-active"  >Soko</a>
     </span>
     <!--toggle button-->
    
 
     <!--toggle button-->
 
-    <span class="col-lg-8 search-form">   
-           
+    <span class="col col-sm-8 search-form">            
 
 
-                <div class="row">
+                
                  <section>
-                <form [formGroup]=" searchService.searchForm" >
-                     <div >
-                    <input type="text"  class=" col col-lg-8  form-group search-bar"  (keyup)="searchService.searchTerms.next($event)" 
-                    formControlName ="search"   #search  placeholder="Search  ...">
-                 </div>
-
+            
+                     <form [formGroup]=" searchService.searchForm" >
+                    <input type="text"  class=" form-control search-bar form-rounded text-center"  (keyup)="searchService.searchTerms.next($event)" 
+                    formControlName ="search"    placeholder="Search  ..." (click)="onSearch()">
                 </form>
+                 
+
+               
             </section>
 
-
-                <input type="submit" class="btn search-btn " value="search"  (click)="onSearch(search.value)">
-
-                </div>                  
+                
             
                        
 
@@ -45,7 +43,7 @@
 
              
     <!--nav bar icons -->
-    <span class="row">
+    <span class="row nav-icon  ">
         <a [routerLink]="['/signin']" routerLinkActive="router-link-active" >   
         <div class="outer-div">
             <mat-icon>person</mat-icon>

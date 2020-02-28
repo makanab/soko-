@@ -11,15 +11,21 @@ import {SearchService} from '../../services/search.service';
 })
 export class SearchresultsComponent implements OnInit {
 
-  query:string;
+  results:any;
 
   
 
   constructor(private router :Router,  private searchService:SearchService) { }
 
   ngOnInit() {
+    this.searchResulst();
 
 
+
+  }
+
+  searchResulst(){
+ this.results = this.searchService.searchResults;
   }
   
 
