@@ -1,13 +1,20 @@
-<app-navbar></app-navbar>
+<app-navbar (getSearchEvent)="SearchEvent($event)"  ></app-navbar>
 
  <div class="container">
-    <div class="row">
+    <div class="row" >
         
-        <h1>results:{{searchService.searchResults}}</h1>
+        <h2>search results</h2>
+        <div class=" mt-4"  *ngFor="let result of searchService.searchResults;i as index;">
+          <h3> result for:{{result.data[0]._source.category}}</h3>
+          <div class="col col-sm-4">
+              <div class="card">
+                  <img  loading="lazy" [src]="result.data[0]._source.itemUrl" class="card-img-top" alt="">
+              </div>
+          </div>
+
+        </div>
 
 
-    <div class="card">
 
-    </div>
     </div>
 </div>

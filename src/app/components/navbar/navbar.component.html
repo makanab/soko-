@@ -2,7 +2,7 @@
 <mat-toolbar class="nav lg-expand my-navbar">
     
     <span class="logo" >
-    <a  [routerLink]="['/home' ]" routerLinkActive="router-link-active"  >Soko</a>
+    <a  [routerLink]="['/home']" routerLinkActive="router-link-active"  >Soko</a>
     </span>
     <!--toggle button-->
    
@@ -44,10 +44,13 @@
              
     <!--nav bar icons -->
     <span class="row nav-icon  ">
-        <a [routerLink]="['/signin']" routerLinkActive="router-link-active" >   
+        <ng-template #popContent> <a class="btn btn-primary">Login</a>  </ng-template>
+        <ng-template #popTitle><b>SignIn|SignUp</b></ng-template>
+        <a  class="" [ngbPopover]="popContent" [popoverTitle]="popTitle" data-toggler="popover"  popover-append-to-body="true">   
         <div class="outer-div">
             <mat-icon>person</mat-icon>
             <span>Account</span>
+            
         </div>
     </a>
 

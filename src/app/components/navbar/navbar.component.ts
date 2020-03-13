@@ -11,41 +11,25 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent  implements OnInit {
-
-  query:string = 'hello world'
-  showSearchResults= false;
-  showSiblings= true;
-  reset:boolean;
-
-  
-
-  @Output() queryEvent = new EventEmitter<string>();
-
-  @Output() resetEvent = new EventEmitter<any>();
-
+  search:any;
  
+
   constructor(
     private http :HttpClient,
      private router:Router,
      private _location :Location,
      private searchService :SearchService
-     
+        
      ) { }
 
      ngOnInit(){
-       this.searchService.search()
+     this.searchService.search();
+    
+
     
     }
     
-    
-    
-  
-
-
-
-
-
-goHome():void{
+    goHome():void{
   this.router.navigateByUrl('/home',{skipLocationChange:false}).then( ()=> {
     this.router.navigate([decodeURI(this._location.path())])
   });
@@ -56,6 +40,12 @@ onSearch(){
   this.router.navigateByUrl('/search');
 }
 
+getSearchEvent($event){
+
+  this.search= $event;
+
+}
+
 
 
 
@@ -64,9 +54,4 @@ onSearch(){
 
 
   
-
 }
-
-
-
-

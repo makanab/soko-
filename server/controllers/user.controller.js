@@ -55,7 +55,6 @@ module.exports.userAuth = (req,res,next)=>{
 
 
 
-
  }
  
  
@@ -72,6 +71,22 @@ module.exports.userAuth = (req,res,next)=>{
 // user  location and ip test
 
 module.exports.myIp =(req,res,next)=>{
+
+   }
+
+
+
+
+
+   // list users 
+   module.exports.users =(req,res,next)=>{
+       User.find({},(err,users)=>{
+         if(err){
+             res.status(501).send(err);
+         } else{
+             res.status(200).send(users);
+         }
+       })
 
    }
 

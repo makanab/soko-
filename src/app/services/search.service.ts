@@ -15,6 +15,18 @@ import {map ,debounceTime, distinctUntilChanged, switchMap,catchError} from 'rxj
 })
 export class SearchService {
 
+
+ 
+  public searchTerms = new Subject<string>();
+  public loading:boolean;
+  public  searchResults:any[];
+  public paginationelements:any;
+  public errMessage:any; 
+  results:any;
+  keys:string[];
+
+
+
   constructor(private http :HttpClient) { }
 
   public searchUrl = 'http://localhost:3000/api/search'
@@ -28,12 +40,15 @@ export class SearchService {
       console.log('Not defined');
     } else{
       let params = {q:term}
-      return this.http.get(this.searchUrl,{params}).pipe(
+      return this.http.get(this.searchUrl,{params})
+      /*.pipe(
         map(response=>{
-          console.log(response)
+         // console.log(response)
+          this.results = response;
           return this.searchResults = response['items'];
+         
         })
-      );
+      );*/
     }
     
 
@@ -53,11 +68,7 @@ export class SearchService {
   
 
 
-  public loading:boolean;
-  public searchTerms = new Subject<string>()
-  public  searchResults :any;
-  public paginationelements:any;
-  public errMessage:any;
+
 
    // search form 
 
@@ -70,6 +81,7 @@ export class SearchService {
 
   // search event 
 
+  
   public search(){
     this.searchTerms.pipe(
       map((e:any)=>{
@@ -91,7 +103,12 @@ export class SearchService {
       }),
     ).subscribe( v=>{
       this.loading = true;
-      this.searchResults = v;
+      this.searchResults = [v];
+      //this.keys = Object.keys(this.searchResults);
+     // console.log(v);
+     // this.keys = Object.keys(this.searchEntries);
+      //console.log(this.searchResults[0]['data']);
+      console.log([v])
       this.paginationelements = this.searchResults;
       
 
