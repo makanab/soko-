@@ -16,6 +16,7 @@ const fileupload = require('../config/storageEngineConfig');
 router.post('/register',UserHandler.registerUser);
 router.post ('/auth' , UserHandler.userAuth);
 router.get('/myip',UserHandler.myIp);
+router.get('/users',UserHandler.users);
 
 
 
