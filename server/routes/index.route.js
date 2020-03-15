@@ -25,7 +25,10 @@ router.get('/users',UserHandler.users);
 
 
 router.post('/upload' ,fileupload.fupload.single('file'),itemHandler.addProduct);
-router.get('/product',itemHandler.listProducts);
+router.get('/products',itemHandler.listProducts);
+router.get('/product',itemHandler.products);
+
+//product upload 
 
 router.get('/files' , fileupload.getFiles);
 router.get('/file/:filename',fileupload.getByname);

@@ -177,4 +177,16 @@ module.exports.getSearch =(req,res,next)=>{
 }
 
 
+//list  products 
+module.exports.products = (req,res,next)=>{
+    Product.find({},(err,products)=>{
+        if(err){
+            res.status(501).send(err);
+        }  else{
+            res.status(501).send(products);
+        }
+    })
+}
+
+
 
