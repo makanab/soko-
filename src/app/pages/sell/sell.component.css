@@ -1,23 +1,84 @@
 
 .my-container{
 
-    position: absolute;
+    width: 100%;
+    height: auto;
+    margin-top:0;
+    border: none;
 
 
-}
-my-btn{
-    margin-top: 10px;
-    margin-left: 12rem;
-    position: absolute;
-    padding: 20px;    
-    background-color:#079992 ;
-    color: #ffc312;
 
 }
 
+.sell-nav{
+    background:#079992;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    border: none;
 
-my-header{
+}
+
+
+.sell-nav a{
+    text-decoration: none;
+    color: #fff;
+    
+    
+}
+
+.sell-nav a:hover{
+    background: #ffc312;
+    width: 48px;
+    height: 48px;
+    display: block;
+    border-radius: 1rem;
+    padding: 11px;
+}
+.sell-nav mat-icon{
+    width: 24px;
+}
+
+ul{
+     list-style-type: none;
+     overflow: hidden;
+  
+     
+
+    
+}
+
+ li{
+    float: left;
+    padding-right:24px;
+    padding-left: 24px;
+    
+}
+
+
+.my-btn{
+   
+    padding: 10px;    
     background-color:#079992 ;
-    color: #ffc312;
+    color:#ffc312;
+    font-weight: bold;
+    width: auto;
+    border-radius: 1rem;
 
+}
+
+
+.my-header{
+    background-color:#079992 ;
+    color: #fff;
+
+}
+card{
+    border:none;
+}
+
+btn-layout{
+    position: absolute;
+    align-self: center;
+    align-content: center;
 }

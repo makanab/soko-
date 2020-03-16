@@ -1,43 +1,74 @@
 
 
-<div class="container-fluid ">
+<div class=" card my-container  mb-5">
+
+
+
+    <div class="card-header my-header">
+
+        <!--Title-->
+        <h2 class="card-title ">
+            Sell product
+        </h2>
+        
+
+        
+        <!--Title-->
+           <!--Navigation-->
+
+    <div class=" sell-nav">
+        <div class="float-right">         
+             <ul>
+                <li><a > <mat-icon>live_help</mat-icon></a></li>
+                <li><a [routerLink]="['/search']" routerLinkActive="router-link-active" > <mat-icon>search</mat-icon></a></li>
+                 <li>
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active" ><mat-icon>home</mat-icon></a>
+                 </li>
+                 
+             </ul>
+
+
+
+        </div>
+    </div>
+
+    
+    <!--Navigation-->
+
+
+    </div>
+    
+ 
+
+
+
+   
+   
+   
     <form #sellproductForm="ngForm" (ngSubmit)="sellproductForm.valid && onSubmit(sellproductForm)" enctype="multipart/form-data" >
 
-<div class="row align-items-center mb-4">
+    <div class="container-fluid col-sm-12">
+    
+<div class="row ">
 
     <!--Product data -->
 
-    <div class="col-lg-12 align-items-center mb-3">
+    <div class="col-sm-8   card mt-2">
 
-        <div class="card ">
-
-            <div class="card-header my-header">
-
-                <!--Title-->
-                <h2 class="card-title ">
-                    Sell product
-                </h2>
-                
-
-                
-                <!--Title-->
+        <div class="row">
 
 
-            </div>
+        <!--Product-->
+        <div class="card col-sm-6 ">  
+            
+            <h2 class="card-title">product details </h2>    
 
       
-        <div class="card-body">
-
-            
+        <div class="card-body">    
     
 
 
 
-            <h2 class="card-text">
-                product details
-            </h2>
-
-            <div class="col-lg-4">
 
                 <!--Category-->
                 <div class="form-group">
@@ -73,25 +104,11 @@
                     
                 </div>
  
-                    <!--sub category-->
-
-                    
-                  
-
-
-
-
-
-
-            </div>
-
-
-
+                <!--sub category-->      
 
 
               <!--Description-->
 
-              <div class="col-lg-4 mb-4">
                 <div class="form-group">
 
                     <textarea name="description" id="description" cols="12" rows="5"class="form-control z-depth-1" placeholder="product discription...."
@@ -109,12 +126,14 @@
                     </div>
 
                 </div>
-            </div>
+            
 
-            <div class="col-lg-4">
+            <!--Description-->
+
+            <!--Select photo-->
                 <div class="form-group">
                     <div class="row">                  
-                    <input type="file" (change)="onFileSelected($event)"  class="btn btn primary" id="itemphoto"
+                    <input type="file" (change)="onFileSelected($event)"  class="btn btn-block" id="itemphoto"
                     name="itemphoto"
 
                     >
@@ -123,7 +142,9 @@
                 </div>
                    
                 </div>
-            </div>
+
+                <!--Select photo-->
+            
        
 
 
@@ -138,24 +159,47 @@
 
 
         </div>
+
+        <!--Product-->
+
+
+        <!--selected product photos-->
+        <div class="card col-sm-6 ">
+            <h2 class="card-title">Selected  photos</h2>
+
+            
+        </div>
+
+
+
+
+
+
+        
+        <!--selected product photos-->
+
+        </div>
+    </div>
+        
         
 
 
-    </div>
+  
 
 
     <!--Product data -->
 
     <!--confirmation-->
 
-    <div class="container-fluid  col-md-12">
+    <div class=" card col-sm-4 mt-2">
+        <h2 class="card-title">Confirm my data </h2>
         
-        <div class="card">
+        <div class="">
 
             <div class="card-body">
-            <h2>Confirm my data </h2>
+           
                 
-        <div class="col-lg-4">
+        <div >
 
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Phone Number">
@@ -204,21 +248,32 @@
     
     <!--confirmation-->
 
-    <!--Post product-->
-    
-
-
-
-
-
-    
-    <!--Post product-->
-
 </div>
 
 
-<input type="submit" value="Post Product" class="btn bg-warning">
+
+
+
+
+</div>
+
+<!--Submit button-->
+
+<div class="btn-layout container-fluid ">
+    <input type="submit" value="Post Product" class="btn my-btn mt-1 mb-1">
+
+</div>
+
+<!--Submit button-->
+
+
+
+
 
 </form>
 </div>
+
+   <div>
+    <app-footer></app-footer>
+   </div>
 
